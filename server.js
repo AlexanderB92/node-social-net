@@ -11,8 +11,8 @@ const posts = require("./routes/api/posts");
 const app = express();
 
 //Body Parser middleware
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Fetch URI
 const db_uri = require("./config/keys").mongoURI;
@@ -35,6 +35,6 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
 
-const port = 5000;
+const port = 27000;
 
 app.listen(port, () => console.log(`Listening for comms on port ${port}...`));
